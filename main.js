@@ -1,6 +1,5 @@
 
-var myCourse;
-let numberOfPlayers = 5;
+let numberOfPlayers = 1;
 let numberOfHoles = 18;
 
 let cardLoaded = false;
@@ -22,6 +21,10 @@ function loadDoc() {
 }
 
 function loadCourse(courseId) {
+    if(cardLoaded) {
+        $(".card").empty();
+        cardLoaded = false;
+    }
     console.log(courseId);
     if(cardLoaded) {
         $("#teeselect").empty();
@@ -36,10 +39,15 @@ function loadCourse(courseId) {
             for(let i = 0; i < teeArray.length; i++) {
                 $("#teeselect").append(`<option>${teeArray[i].teeType}</option>`);
             }
+            numberOfHoles = myCourse.data.holes.length;
         }
     }
     xhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/"+courseId, true);
     xhttp.send();
+}
+
+function changePlayers(num) {
+    numberOfPlayers = num;
 }
 
 function buildCard() {
