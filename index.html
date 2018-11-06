@@ -17,13 +17,12 @@
     <div class="container">
         <div class="selection">
             <select id="courseselect" onchange="loadCourse(this.value)">
-                <option>Select Course</option>
+                <option id="placeholder1">Select Course</option>
             </select>
-            <select id="teeselect" onchange="buildCard()">
-                <option>Select Tee</option>
+            <select id="teeselect" onchange="buildCard(this.value)">
+                <option id="placeholder2">Select Tee</option>
             </select>
             <select id="playerselect" onchange="changePlayers(this.value)">
-                <option value="0">Number of Players</option>
                 <option value="1">1 player</option>
                 <option value="2">2 players</option>
                 <option value="3">3 players</option>
@@ -32,6 +31,10 @@
         </div>
         <div class="card">
             
+        </div>
+        <div class="alerts">
+            <h3>Welcome to my Golf Card!</h3>
+            <p id="messageBox">No Messages</p>
         </div>
     </div>
 
