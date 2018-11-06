@@ -132,9 +132,9 @@ function lastScore(player) {
     let message;
     let relativeScore = total - totalPar;
     if(Math.abs(relativeScore) == relativeScore) {
-        message = "Player "+player+"Par Score: "+(total-totalPar)+" | Better luck next time!";
+        message = "Player "+player+", Par Score: "+(total-totalPar)+" | Better luck next time!";
     } else {
-        message = "Par Score: "+(total-totalPar)+" | On to the PGA!";
+        message = "Player "+player+", Par Score: "+(total-totalPar)+" | On to the PGA!";
     }
     $("#messageBox").html(message);
 }
