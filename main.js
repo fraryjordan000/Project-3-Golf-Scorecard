@@ -129,8 +129,14 @@ function buildCard(tee) {
 
 function lastScore(player) {
     updateValues();
-    let message = "";
-
+    let message;
+    let relativeScore = total - totalPar;
+    if(Math.abs(relativeScore) == relativeScore) {
+        message = "Par Score: "+(total-totalPar)+" | Better luck next time!";
+    } else {
+        message = "Par Score: "+(total-totalPar)+" | On to the PGA!";
+    }
+    $("#messageBox").html(message);
 }
 
 function updateValues(player) {
@@ -149,4 +155,5 @@ function updateValues(player) {
     $(`#PT${player}`).html(`${total}`);
     $(`#O${player}`).html(`${outSum}`);
     $(`#IN${player}`).html(`${inSum}`);
+    return 1;
 }
