@@ -2,6 +2,8 @@
 let numberOfPlayers = 1;
 let numberOfHoles = 18;
 
+var myCard = [];
+
 let cardLoaded = false;
 
 function loadDoc() {
@@ -48,14 +50,37 @@ function loadCourse(courseId) {
 
 function changePlayers(num) {
     numberOfPlayers = num;
+    buildCard();
 }
 
 function buildCard() {
     $(".card").empty();
-    //TODO
+    for(let i = 0; i <= (numberOfHoles + 1); i++) {
+        if(i == 0) {
+            $(".card").append(`<div class="column" id="playerNumbers"></div>`);
+            for(let j=1; j <= numberOfPlayers; j++) {
+                $("#playerNumbers").append(`<p>Player${j}</p>`);
+            }
+        } else if(i == (numberOfHoles + 1)) {
+            $(".card").append(`<div class="column" id="totals"></div>`);
+            for(let j=1; j<= numberOfPlayers; j++) {
+                $("#totals").append(`<p id="PT${j}">Total:</p>`);
+            }
+        } else if(i == numberOfHoles) {
+            $(".card").append(`<div class="column" id="C${i}"></div>`);
+            for(let j=1; j<= numberOfPlayers; j++) {
+                $(`#C${i}`).append(`<input onfocusout="lastScore(${j})" id="I${i}${j}">`);
+            }
+        } else {
+            $(".card").append(`<div class="column" id="C${i}"></div>`);
+            for(let j=1; j<= numberOfPlayers; j++) {
+                $(`#C${i}`).append(`<input id="I${i}${j}">`);
+            }
+        }
+    }
     cardLoaded = true;
 }
 
-function addHoles() {
-    //TODO
+function lastScore(player) {
+    
 }

@@ -6,6 +6,10 @@ html, body {
     margin: 0;
 }
 
+p {
+    margin: 2px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
