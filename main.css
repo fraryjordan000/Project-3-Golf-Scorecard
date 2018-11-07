@@ -35,7 +35,7 @@ p {
     background-color: #bbb;
     height: 50px;
     width: 25%;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .card {
@@ -47,6 +47,7 @@ p {
     background-color: #ccc;
     padding: 5px;
     opacity: 0.8;
+    border-radius: 5px;
 }
 
 .column {
@@ -70,5 +71,6 @@ p {
     color: #eee;
     width: 12%;
     height: 25%;
-    background-color: #aaa;
+    background-color: #bbb;
+    border-radius: 5px;
 }
