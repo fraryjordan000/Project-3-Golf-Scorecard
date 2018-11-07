@@ -6,8 +6,14 @@ html, body {
     margin: 0;
 }
 
+body {
+    background-image: url('./golfField.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 p {
-    margin: 3px;
+    margin: 5px;
     font-size: 0.9em;
 }
 
@@ -36,10 +42,11 @@ p {
     display: flex;
 
     text-align: center;
-    height: 100%;
+    height: 50%;
     width: 75%;
     background-color: #ccc;
     padding: 5px;
+    opacity: 0.8;
 }
 
 .column {
@@ -49,7 +56,7 @@ p {
 
 .card input {
     width: 50px;
-    margin: 2px;
+    margin: 4px;
 }
 
 .alerts {
