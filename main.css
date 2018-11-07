@@ -74,3 +74,8 @@ p {
     background-color: #bbb;
     border-radius: 5px;
 }
+
+.newAlert {
+    background-color: #eee;
+    color: #bbb
+}

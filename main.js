@@ -137,6 +137,17 @@ function lastScore(player) {
         message = "Player "+player+", Par Score: "+(total-totalPar)+" | On to the PGA!";
     }
     $("#messageBox").html(message);
+    $(".alerts").addClass('newAlert');
+    setTimeout(() => {
+        $(".alerts").removeClass('newAlert');
+        setTimeout(() => {
+            $(".alerts").addClass('newAlert');
+            setTimeout(() => {
+                $(".alerts").removeClass('newAlert');
+            }, 150);
+        }, 150);
+    }, 150);
+    
 }
 
 function updateValues(player) {
